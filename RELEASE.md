@@ -2,6 +2,8 @@
 
 ## Major Features and Improvements
 
+* Added support for list-type Placeholder.
+
 ## Breaking Changes
 
 ### For Pipeline Authors
@@ -17,7 +19,7 @@
 *   Fixed the cluster spec error in CAIP Tuner on Vertex when
     `num_parallel_trials = 1`
 *   Replaced deprecated assertDictContainsSubset with
-    assertLessEqual(itemsA, itemsB).    
+    assertLessEqual(itemsA, itemsB).
 
 ## Dependency Updates
 
