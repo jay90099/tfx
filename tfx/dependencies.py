@@ -82,14 +82,14 @@ def make_required_install_packages():
       'keras-tuner>=1.0.4,<2',
       'kubernetes>=10.0.1,<13',
       'numpy>=1.16,<2',
-      'pyarrow>=1,<6',
+      'pyarrow>=1,<7',
       'pyyaml>=3.12,<6',
       # Keep the TF version same as TFT to help Pip version resolution.
       # Pip might stuck in a TF 1.15 dependency although there is a working
       # dependency set with TF 2.x without the sync.
       # pylint: disable=line-too-long
       'tensorflow' + select_constraint(
-          '>=1.15.5,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,<2.8'),
+          '>=1.15.5,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,<2.9'),
       # pylint: enable=line-too-long
       'tensorflow-hub>=0.9.0,<0.13',
       'tensorflow-data-validation' + select_constraint(
