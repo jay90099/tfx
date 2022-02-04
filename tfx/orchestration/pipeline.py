@@ -301,13 +301,8 @@ class Pipeline:
 
     # Connects nodes based on producer map.
     for component in deduped_components:
-      channels = list(component.inputs.values())
-      for exec_property in component.exec_properties.values():
-        if isinstance(exec_property, ph.ChannelWrappedPlaceholder):
-          channels.append(exec_property.channel)
-
-      for base_channel in channels:
-        for ch in channel_utils.get_individual_channels(base_channel):
+      for input_channel in component.inputs.values():
+        for ch in channel_utils.get_individual_channels(input_channel):
           if ch not in bound_channels:
             continue
           upstream_node = node_by_id.get(ch.producer_component_id)
